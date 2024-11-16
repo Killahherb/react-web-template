@@ -1,0 +1,76 @@
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+
+    @media (max-width: 768px) {
+      display: none; // Hide links initially for mobile
+      flex-direction: column; // Set to column for mobile dropdown
+      width: 100%; // Full width for dropdown
+      background-color: #333; // Same background color as the navbar
+      position: absolute;
+      top: 54px; // Position below the navbar
+      right: 0;
+      padding: 1rem 0;
+      border-top: 1px solid #444; // Add a separator line for better distinction
+      z-index: 1000; // Ensure it appears above other content
+    }
+
+    li {
+      margin: 0 1rem;
+
+      @media (max-width: 768px) {
+        margin: 0; // Remove horizontal margin in the dropdown
+        padding: 1rem; // Add vertical padding for better spacing
+        border-bottom: 1px solid #444; // Add a border between dropdown items
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ddd;
+        }
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: block; // Show hamburger icon on mobile
+    }
+  }
+
+  // Add the open styles to display the menu when toggled
+  .nav-links.open {
+    display: flex; // Show the links when toggled
+  }
+}

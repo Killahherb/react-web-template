@@ -1,0 +1,36 @@
+.content-section {
+  padding: 2rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 1rem; // Reduce padding for smaller screens
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem; // Reduce heading size for tablets
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem; // Further reduce for mobile phones
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1rem; // Reduce font size for smaller screens
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem; // Further reduce for phones
+    }
+  }
+}
